@@ -13,10 +13,19 @@ class Solution:
         
         divisor_sum = 1
         
-        for i in range(2,n):
+        i = 2 
+        
+        while i*i <= n :
             if n % i == 0 :
-                divisor_sum +=i 
+                divisor_sum += i
                 
+                pair = n // i
+                
+                if pair != i :
+                    divisor_sum += pair 
+                
+            i += 1
+            
         return n == divisor_sum
     
 result = Solution()
