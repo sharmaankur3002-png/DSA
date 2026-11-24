@@ -4,11 +4,16 @@
 
 class Solution :
     def reverseArray(self,arr):
-        newarr=[]
-        for i in range(len(arr)-1,-1,-1):
-            newarr.append(arr[i])
+        left = 0
+        right = len(arr)-1
+        
+        while right > left :
+            arr[left],arr[right] = arr[right],arr[left]
             
-        return newarr
+            left+=1
+            right-=1
+        
+        return arr
             
 def main():
     
